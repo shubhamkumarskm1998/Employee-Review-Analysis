@@ -1,7 +1,7 @@
 # Employee-Review-Analysis
 
 # Introduction: 
-: The HR team is surfing social media to gather current and ex-employee 
+The HR team is surfing social media to gather current and ex-employee 
 feedback or sentiments.
 This information gathered will be used to derive actionable insights and take corrective 
 actions to improve the employer-employee relationship. The data is web-scraped from 
