@@ -158,35 +158,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS COMEMPLOYEE_FINAL(
     carrer_opportunities_stars INT,
     comp_benefit_stars INT,
     senior_mangemnet_stars INT)
---PARTITIONED BY (E_COUNTRY STRING)
---CLUSTERED by (E_YEAR) INTO 10 buckets
 row format delimited fields terminated by ","
 tblproperties("skip.header.line.count"="1");
 LOAD DATA INPATH '/user/anabig114215/query-hive-73383.csv' INTO TABLE COMEMPLOYEE_FINAL;
 
-
-create table COMPANY_EMPLOYEE1(
-    E_INDEX INT,    
-    E_COMPANY STRING,
-    E_DATE STRING,
-    E_QUARTER STRING,
-    E_YEAR STRING,
-    JOBTITLE STRING,
-    SUMMARY STRING,
-    PROS STRING,
-    CONS STRING,
-    overall_ratings INT,
-    work_balance_stars INT,
-    culture_values_stars INT,
-    carrer_opportunities_stars INT,
-    comp_benefit_stars INT,
-    senior_mangemnet_stars INT)
---PARTITIONED BY (E_COUNTRY STRING)
-CLUSTERED by (E_YEAR) INTO 10 buckets
-row format delimited fields terminated by ","
-stored as textfile;
-set hive.exec.dynamic.partition.mode=nonstrict
-insert overwrite table COMPANY_EMPLOYEE1 SELECT * FROM COMEMPLOYEE1
 
 create table COMPANY_EMPLOYEE_FINAL1(
     E_INDEX INT,    
