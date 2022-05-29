@@ -180,7 +180,7 @@ create table COMPANY_EMPLOYEE_FINAL1(
     comp_benefit_stars INT,
     senior_mangemnet_stars INT)
 PARTITIONED BY (E_COUNTRY STRING)
-CLUSTERED by (E_YEAR) INTO 10 buckets
+CLUSTERED by (E_YEAR) INTO 100 buckets
 row format delimited fields terminated by ","
 stored as textfile;
 
